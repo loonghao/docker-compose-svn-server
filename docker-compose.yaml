@@ -1,11 +1,13 @@
 version: "3"
 services:
-  snv
-    image: elleforio/svn-server
+  snv:
+    image: elleflorio/svn-server
     ports:
       - 7443:80
       - 3690:3690
     container_name: svn-server
     working_dir: /home/svn
     volumes:
-      - ./matser-pipeline:home/svn
+      - ./matser-pipeline:/home/svn
+    command: >
+      sh -c svnadmin create --fs-type fsfs hzpipeline | htpasswd -b /etc/subversion/passwd svn-admin svn-admin
