@@ -9,9 +9,3 @@ services:
     working_dir: /home/svn
     volumes:
       - ./matser-pipeline:/home/svn
-    command: 
-      - /bin/sh
-      - -c
-      - |
-          svnadmin create --fs-type fsfs pipeline
-          htpasswd -b /etc/subversion/passwd svn-admin svn-admin
