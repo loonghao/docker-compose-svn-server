@@ -1,6 +1,6 @@
 version: "3"
 services:
-  snv:
+  svn:
     image: elleflorio/svn-server
     ports:
       - 7443:80
